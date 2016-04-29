@@ -1,3 +1,5 @@
-# TimeLapse
+# Corkscrew Coaster Mod
 
-In this `readme` you can explain what your mod has to offer.
+Adds a Corkscrew Coaster to the Parkitect Game.
+
+Made by H-Pops & Casual_Dutchman
