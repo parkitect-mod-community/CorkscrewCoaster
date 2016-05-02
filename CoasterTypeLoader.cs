@@ -26,6 +26,10 @@ namespace HelloMod
                     if (attraction.getName() == "Steel Coaster")
                     {
                         TR = Instantiate(attraction);
+                        TR.dropsImportanceExcitement = 0.665f;
+                        TR.inversionsImportanceExcitement = 0.673f;
+                        TR.averageLatGImportanceExcitement = 0.121f;
+                        TR.accelerationImportanceExcitement = 0.525f;
                         TR.meshGenerator = ScriptableObject.CreateInstance<CustomCoasterMeshGenerator>();
                         TR.meshGenerator.stationPlatformGO = attraction.meshGenerator.stationPlatformGO;
                         TR.meshGenerator.material = attraction.meshGenerator.material;
@@ -50,7 +54,7 @@ namespace HelloMod
                 Color[] colors = new Color[] { Color.white, Color.grey};
                 TR.meshGenerator.customColors = colors;
                 TR.setDisplayName("Corkscrew Coaster");
-                TR.price = 20;
+                TR.price = 3600;
                 TR.name = "Corkscrew_coaster_GO";
                 TR.defaultTrainLength = 5;
                 TR.maxTrainLength = 7;
@@ -59,7 +63,13 @@ namespace HelloMod
 
                 //Get cars from assetbundle
                 GameObject carGO = bundle.LoadAsset("Corkscrew Coaster@Car") as GameObject;
+                Rigidbody carRigid = carGO.AddComponent<Rigidbody>();
+                carRigid.isKinematic = true;
+                carGO.AddComponent<BoxCollider>();
                 GameObject frontCarGO = bundle.LoadAsset("Corkscrew Coaster@FrontCar") as GameObject;
+                Rigidbody frontCarRigid = frontCarGO.AddComponent<Rigidbody>();
+                frontCarRigid.isKinematic = true;
+                frontCarGO.AddComponent<BoxCollider>();
 
                 //Add car type 
                 CustomCar car = carGO.AddComponent<CustomCar>();
@@ -80,11 +90,9 @@ namespace HelloMod
                 AssetManager.Instance.registerObject(frontCar);
 
                 //Offset
-                /* 
-                float CarOffset = .2f;
+                float CarOffset = .02f;
                 car.offsetBack = CarOffset;
                 frontCar.offsetBack = CarOffset;
-                */
 
                 //Restraints
                 RestraintRotationController controller = carGO.AddComponent<RestraintRotationController>();
