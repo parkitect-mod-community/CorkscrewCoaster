@@ -118,6 +118,6 @@ public class CustomCoasterMeshGenerator : MeshGenerator
     }
     protected override float railHalfHeight()
     {
-        return 0.02666f;
+        return 0.0f;
     }
 }
