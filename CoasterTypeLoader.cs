@@ -37,7 +37,7 @@ namespace HelloMod
                         TR.meshGenerator.frictionWheelsGO = attraction.meshGenerator.frictionWheelsGO;
                         TR.meshGenerator.supportInstantiator = attraction.meshGenerator.supportInstantiator;
                         GameObject asset  = Instantiate(bundle.LoadAsset("Corkscrew Coaster@Crossbeam")) as GameObject;
-                        TR.meshGenerator.crossBeamGO = SetUV(asset, 14, 15);
+                        TR.meshGenerator.crossBeamGO = SetUV(asset, 15, 14);
                         break;
                     }
                 }
@@ -51,7 +51,13 @@ namespace HelloMod
                     }
                 }*/
 
-                Color[] colors = new Color[] { Color.white, Color.grey};
+                int pillar = 89;
+                int center = 100;
+                int crossbeam = 255;
+                int beams = 175;
+
+                Color[] colors = new Color[] { new Color(pillar / 255f, pillar / 255f, pillar / 255f, 1), new Color(center / 255f, center / 255f, center / 255f, 1), new Color(crossbeam / 255f, crossbeam / 255f, crossbeam / 255f, 1), new Color(beams / 255f, beams / 255f, beams / 255f, 1) };
+                TR.meshGenerator.customColors = colors;
                 TR.meshGenerator.customColors = colors;
                 TR.setDisplayName("Corkscrew Coaster");
                 TR.price = 3600;
