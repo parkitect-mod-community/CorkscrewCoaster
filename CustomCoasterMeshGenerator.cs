@@ -33,11 +33,11 @@ public class CustomCoasterMeshGenerator : MeshGenerator
         base.prepare(trackSegment, putMeshOnGO);
         putMeshOnGO.GetComponent<Renderer>().sharedMaterial = this.material;
         this.centerTubeExtruder = new TubeExtruder(centerTubeRadius, centerTubeVertCount);
-        this.centerTubeExtruder.setUV(15, 15);
+        this.centerTubeExtruder.setUV(14, 15);
         this.leftTubeExtruder = new TubeExtruder(sideTubesRadius, sideTubesVertCount);
-        this.leftTubeExtruder.setUV(15, 15);
+        this.leftTubeExtruder.setUV(14, 14);
         this.rightTubeExtruder = new TubeExtruder(sideTubesRadius, sideTubesVertCount);
-        this.rightTubeExtruder.setUV(15, 15);
+        this.rightTubeExtruder.setUV(14, 14);
         this.collisionMeshExtruder = new BoxExtruder(base.trackWidth, 0.02666f);
         this.buildVolumeMeshExtruder = new BoxExtruder(base.trackWidth, 0.8f);
         this.buildVolumeMeshExtruder.closeEnds = true;
