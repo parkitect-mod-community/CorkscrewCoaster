@@ -88,6 +88,7 @@ namespace HelloMod
                 List<CoasterCarInstantiator> TypeList = new List<CoasterCarInstantiator>();
                 CoasterCarInstantiator CarInstantiator = ScriptableObject.CreateInstance<CoasterCarInstantiator>();
 
+                CarInstantiator.name = "Corkscrew Coaster@CoasterCarInstantiator";
                 CarInstantiator.carGO = carGO;
                 CarInstantiator.frontCarGO = frontCarGO;
 
