@@ -23,7 +23,7 @@ namespace HelloMod
                 List<Attraction> attractions = AssetManager.Instance.getAttractionObjects().ToList();
                 foreach (TrackedRide attraction in attractions.OfType<TrackedRide>())
                 {
-                    if (attraction.getName() == "Steel Coaster")
+                    if (attraction.getUnlocalizedName() == "Steel Coaster")
                     {
                         TR = Instantiate(attraction);
                         TR.dropsImportanceExcitement = 0.665f;
@@ -62,9 +62,6 @@ namespace HelloMod
                 TR.setDisplayName("Corkscrew Coaster");
                 TR.price = 3600;
                 TR.name = "Corkscrew_coaster_GO";
-                TR.defaultTrainLength = 5;
-                TR.maxTrainLength = 7;
-                TR.minTrainLength = 2;
                 AssetManager.Instance.registerObject(TR);
 
                 //Get cars from assetbundle
@@ -89,6 +86,9 @@ namespace HelloMod
                 CoasterCarInstantiator CarInstantiator = ScriptableObject.CreateInstance<CoasterCarInstantiator>();
 
                 CarInstantiator.name = "Corkscrew Coaster@CoasterCarInstantiator";
+                CarInstantiator.defaultTrainLength = 5;
+                CarInstantiator.maxTrainLength = 7;
+                CarInstantiator.minTrainLength = 2;
                 CarInstantiator.carGO = carGO;
                 CarInstantiator.frontCarGO = frontCarGO;
 
