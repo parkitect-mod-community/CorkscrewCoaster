@@ -98,7 +98,7 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
         return 0.35f;
     }
 
-    protected override float getTunnelOffsetY()
+    public override float getTunnelOffsetY()
     {
         return 0.2f;
     }
