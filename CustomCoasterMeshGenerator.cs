@@ -98,7 +98,7 @@ public class CustomCoasterMeshGenerator : MeshGenerator
         return 0.3f;
     }
 
-    protected override float getTunnelOffsetY()
+    public override float getTunnelOffsetY()
     {
         return 0.2f;
     }
