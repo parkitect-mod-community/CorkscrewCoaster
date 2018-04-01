@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class TwisterCoasterMeshGenerator : MeshGenerator
 {
@@ -25,41 +24,41 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
     protected override void Initialize()
     {
         base.Initialize();
-        base.trackWidth = 0.45234f;
+        trackWidth = 0.45234f;
     }
 
     public override void prepare(TrackSegment4 trackSegment, GameObject putMeshOnGO)
     {
         base.prepare(trackSegment, putMeshOnGO);
-        putMeshOnGO.GetComponent<Renderer>().sharedMaterial = this.material;
-        this.centerTubeExtruder = new TubeExtruder(centerTubeRadius, centerTubeVertCount);
-        this.centerTubeExtruder.setUV(15, 15);
-        this.leftTubeExtruder = new TubeExtruder(sideTubesRadius, sideTubesVertCount);
-        this.leftTubeExtruder.setUV(15, 15);
-        this.rightTubeExtruder = new TubeExtruder(sideTubesRadius, sideTubesVertCount);
-        this.rightTubeExtruder.setUV(15, 15);
-        this.collisionMeshExtruder = new BoxExtruder(base.trackWidth, 0.02666f);
-        this.buildVolumeMeshExtruder = new BoxExtruder(base.trackWidth, 0.8f);
-        this.buildVolumeMeshExtruder.closeEnds = true;
+        putMeshOnGO.GetComponent<Renderer>().sharedMaterial = material;
+        centerTubeExtruder = new TubeExtruder(centerTubeRadius, centerTubeVertCount);
+        centerTubeExtruder.setUV(15, 15);
+        leftTubeExtruder = new TubeExtruder(sideTubesRadius, sideTubesVertCount);
+        leftTubeExtruder.setUV(15, 15);
+        rightTubeExtruder = new TubeExtruder(sideTubesRadius, sideTubesVertCount);
+        rightTubeExtruder.setUV(15, 15);
+        collisionMeshExtruder = new BoxExtruder(trackWidth, 0.02666f);
+        buildVolumeMeshExtruder = new BoxExtruder(trackWidth, 0.8f);
+        buildVolumeMeshExtruder.closeEnds = true;
     }
 
     public override void sampleAt(TrackSegment4 trackSegment, float t)
     {
         base.sampleAt(trackSegment, t);
         Vector3 normal = trackSegment.getNormal(t);
-        Vector3 trackPivot = base.getTrackPivot(trackSegment.getPoint(t), normal);
+        Vector3 trackPivot = getTrackPivot(trackSegment.getPoint(t), normal);
         Vector3 tangentPoint = trackSegment.getTangentPoint(t);
         Vector3 normalized = Vector3.Cross(normal, tangentPoint).normalized;
-        Vector3 middlePoint = trackPivot + normalized * base.trackWidth / 2f;
-        Vector3 middlePoint2 = trackPivot - normalized * base.trackWidth / 2f;
-        Vector3 vector = trackPivot + normal * this.getCenterPointOffsetY();
-        this.centerTubeExtruder.extrude(vector, tangentPoint, normal);
-        this.leftTubeExtruder.extrude(middlePoint, tangentPoint, normal);
-        this.rightTubeExtruder.extrude(middlePoint2, tangentPoint, normal);
-        this.collisionMeshExtruder.extrude(trackPivot, tangentPoint, normal);
-        if (this.liftExtruder != null)
+        Vector3 middlePoint = trackPivot + normalized * trackWidth / 2f;
+        Vector3 middlePoint2 = trackPivot - normalized * trackWidth / 2f;
+        Vector3 vector = trackPivot + normal * getCenterPointOffsetY();
+        centerTubeExtruder.extrude(vector, tangentPoint, normal);
+        leftTubeExtruder.extrude(middlePoint, tangentPoint, normal);
+        rightTubeExtruder.extrude(middlePoint2, tangentPoint, normal);
+        collisionMeshExtruder.extrude(trackPivot, tangentPoint, normal);
+        if (liftExtruder != null)
         {
-            this.liftExtruder.extrude(vector - normal * (0.06613f + this.chainLiftHeight / 2f), tangentPoint, normal);
+            liftExtruder.extrude(vector - normal * (0.06613f + chainLiftHeight / 2f), tangentPoint, normal);
         }
     }
 
@@ -70,22 +69,17 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
 
     public override Mesh getMesh(GameObject putMeshOnGO)
     {
-        return default(MeshCombiner).start().add(new Extruder[]
-        {
-            this.centerTubeExtruder,
-            this.leftTubeExtruder,
-            this.rightTubeExtruder
-        }).end(putMeshOnGO.transform.worldToLocalMatrix);
+        return MeshCombiner.start().add(centerTubeExtruder, leftTubeExtruder, rightTubeExtruder).end(putMeshOnGO.transform.worldToLocalMatrix);
     }
 
     public override Mesh getCollisionMesh(GameObject putMeshOnGO)
     {
-        return this.collisionMeshExtruder.getMesh(putMeshOnGO.transform.worldToLocalMatrix);
+        return collisionMeshExtruder.getMesh(putMeshOnGO.transform.worldToLocalMatrix);
     }
 
     public override Extruder getBuildVolumeMeshExtruder()
     {
-        return this.buildVolumeMeshExtruder;
+        return buildVolumeMeshExtruder;
     }
 
     public override float getCenterPointOffsetY()

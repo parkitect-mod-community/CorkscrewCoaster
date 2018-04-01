@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="$USER_HOME$/.Rider2017.3/system/resharper-host/local/Transient/ReSharperHost/v11/SolutionCaches/_CorkscrewCoaster.-22549643.00" t="ExcludeRecursive" />
+    <e p="$PROJECT_DIR$" t="IncludeRecursive">
+      <e p="AssetBundleManager.cs" t="Include" />
+      <e p="CorkscrewCoaster.csproj" t="IncludeRecursive" />
+      <e p="CorkscrewCoaster.sln" t="IncludeFlat" />
+      <e p="CustomCoasterMeshGenerator.cs" t="Include" />
+      <e p="Main.cs" t="Include" />
+      <e p="TrackRiderUtil" t="Include">
+        <e p=".git" t="Include" />
+        <e p=".gitignore" t="Include" />
+        <e p="BaseCar.cs" t="Include" />
+        <e p="GameObjectHelper.cs" t="Include" />
+        <e p="LICENSE" t="Include" />
+        <e p="README.md" t="Include" />
+        <e p="TrackRideHelper.cs" t="Include" />
+        <e p="TrackRiderBinder.cs" t="Include" />
+        <e p="TrackedRiderUtility.csproj" t="Include" />
+        <e p="TrackedRiderUtility.sln" t="Include" />
+        <e p="mod.json" t="Include" />
+      </e>
+      <e p="TwisterCoasterMeshGenerator.cs" t="Include" />
+      <e p="assetbundle" t="Include">
+        <e p="mod" t="Include" />
+        <e p="mod.manifest" t="Include" />
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+    <e p="$PROJECT_DIR$/../pollend@CorkscrewCoaster" t="ExcludeRecursive" />
+  </component>
+</project>

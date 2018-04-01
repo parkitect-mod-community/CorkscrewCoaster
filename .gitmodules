@@ -1,0 +1,3 @@
+[submodule "TrackRiderUtil"]
+	path = TrackRiderUtil
+	url = git@github.com:pollend/TrackRiderUtil.git
