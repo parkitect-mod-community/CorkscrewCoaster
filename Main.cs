@@ -57,7 +57,7 @@ namespace CorkscrewCoaster
             );
             coasterCarInstantiator.frontVehicleGO = frontCar;
             coasterCarInstantiator.frontVehicleGO.gameObject.AddComponent<RestraintRotationController>().closedAngles =
-                new Vector3(90, 0, 0);
+                new Vector3(110, 0, 0);
 
             List<Transform> transforms = new List<Transform>();
             Utility.recursiveFindTransformsStartingWith("wheel", frontCar.transform, transforms);
@@ -75,7 +75,7 @@ namespace CorkscrewCoaster
             );
             coasterCarInstantiator.vehicleGO = backCar;
             coasterCarInstantiator.vehicleGO.gameObject.AddComponent<RestraintRotationController>().closedAngles =
-                new Vector3(90, 0, 0);
+                new Vector3(110, 0, 0);
 
             Utility.recursiveFindTransformsStartingWith("wheel", backCar.transform, transforms);
             foreach (var transform in transforms)
