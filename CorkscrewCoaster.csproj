@@ -69,7 +69,6 @@
     <DefineConstants>PARKITECT</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="AssetBundleManager.cs" />
     <Compile Include="TwisterCoasterMeshGenerator.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="TrackRiderUtil\BaseCar.cs" />
