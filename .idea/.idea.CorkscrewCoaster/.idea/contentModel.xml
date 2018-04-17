@@ -27,6 +27,8 @@
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />
+      <e p="preview.png" t="Include" />
+      <e p="steam_workshop-id" t="Include" />
     </e>
     <e p="$PROJECT_DIR$/../pollend@CorkscrewCoaster" t="ExcludeRecursive" />
   </component>

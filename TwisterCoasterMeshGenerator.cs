@@ -31,11 +31,11 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
         base.prepare(trackSegment, putMeshOnGO);
         putMeshOnGO.GetComponent<Renderer>().sharedMaterial = material;
         centerTubeExtruder = new TubeExtruder(centerTubeRadius, centerTubeVertCount);
-        centerTubeExtruder.setUV(15, 15);
+        centerTubeExtruder.setUV(14, 14);
         leftTubeExtruder = new TubeExtruder(sideTubesRadius, sideTubesVertCount);
-        leftTubeExtruder.setUV(15, 15);
+        leftTubeExtruder.setUV(14, 15);
         rightTubeExtruder = new TubeExtruder(sideTubesRadius, sideTubesVertCount);
-        rightTubeExtruder.setUV(15, 15);
+        rightTubeExtruder.setUV(14, 15);
         collisionMeshExtruder = new BoxExtruder(trackWidth, 0.02666f);
         buildVolumeMeshExtruder = new BoxExtruder(trackWidth, 0.8f);
         buildVolumeMeshExtruder.closeEnds = true;
@@ -57,7 +57,7 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
         collisionMeshExtruder.extrude(trackPivot, tangentPoint, normal);
         if (liftExtruder != null)
         {
-            liftExtruder.extrude(vector - normal * (0.06613f + chainLiftHeight / 2f), tangentPoint, normal);
+            liftExtruder.extrude(vector - normal * (0.06713f + chainLiftHeight / 2f), tangentPoint, normal);
         }
     }
 

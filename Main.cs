@@ -37,7 +37,7 @@ namespace CorkscrewCoaster
             trackedRide.meshGenerator.customColors = new[]
             {
                 new Color(63f / 255f, 46f / 255f, 37f / 255f, 1), new Color(43f / 255f, 35f / 255f, 35f / 255f, 1),
-                new Color(90f / 255f, 90f / 255f, 90f / 255f, 1)
+                new Color(90f / 255f, 90f / 255f, 90f / 255f, 1),new Color(90f / 255f, 90f / 255f, 90f / 255f, 1)
             };
             trackedRide.dropsImportanceExcitement = 0.665f;
             trackedRide.inversionsImportanceExcitement = 0.673f;
@@ -46,7 +46,7 @@ namespace CorkscrewCoaster
 
             CoasterCarInstantiator coasterCarInstantiator =
                 binder.RegisterCoasterCarInstaniator<CoasterCarInstantiator>(trackedRide, "CorkscrewCoasterInsantiator",
-                    "Corkscrew Car", 1, 10, 2);
+                    "Corkscrew Car", 1, 15, 6);
 
             BaseCar frontCar = binder.RegisterCar<BaseCar>(AssetBundleManager.FrontCartGo, "CorkScrewCoaster_Front_Car",
                 .35f, 0f, true, new[]
@@ -93,7 +93,7 @@ namespace CorkscrewCoaster
         
         public string Name => "Corkscrew Coaster";
 
-        public string Description => ".";
+        public string Description => "Creates a Corkscrew Coaster";
 
         string IMod.Identifier => "CorkscrewCoaster";
 	

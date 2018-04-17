@@ -84,6 +84,10 @@
   <ItemGroup>
     <Content Include="assetbundle\mod" />
     <Content Include="assetbundle\mod.manifest" />
+    <Content Include="preview.png" />
+    <Content Include="steam_workshop-id">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="TrackRiderUtil\.git" />
     <Content Include="TrackRiderUtil\.gitignore" />
     <Content Include="TrackRiderUtil\LICENSE" />
