@@ -6,7 +6,6 @@
       <e p="AssetBundleManager.cs" t="Include" />
       <e p="CorkscrewCoaster.csproj" t="IncludeRecursive" />
       <e p="CorkscrewCoaster.sln" t="IncludeFlat" />
-      <e p="CustomCoasterMeshGenerator.cs" t="Include" />
       <e p="Main.cs" t="Include" />
       <e p="TrackRiderUtil" t="Include">
         <e p=".git" t="Include" />

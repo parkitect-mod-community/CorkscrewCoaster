@@ -70,13 +70,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="AssetBundleManager.cs" />
-    <Compile Include="CustomCoasterMeshGenerator.cs" />
+    <Compile Include="TwisterCoasterMeshGenerator.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="TrackRiderUtil\BaseCar.cs" />
     <Compile Include="TrackRiderUtil\GameObjectHelper.cs" />
     <Compile Include="TrackRiderUtil\TrackRideHelper.cs" />
     <Compile Include="TrackRiderUtil\TrackRiderBinder.cs" />
-    <Compile Include="TwisterCoasterMeshGenerator.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System.Xml" />
