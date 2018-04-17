@@ -12,7 +12,6 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
 
     private const float buildVolumeHeight = 0.8f;
     
-
     private TubeExtruder centerTubeExtruder;
 
     private TubeExtruder leftTubeExtruder;
