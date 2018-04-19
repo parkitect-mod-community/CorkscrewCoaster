@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 340262008
+CRC: 2546722126
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 0d1de5828ec1d200cddc7b4a8a8a81b1
+    Hash: ec9b69d5391d1370092bfd8292b2c40b
   TypeTreeHash:
     serializedVersion: 2
-    Hash: f47e5080155a0c3ac2e9ffbbc14e366d
+    Hash: bc193d49e7d16f71ac778acf3c7bfc27
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -17,6 +17,8 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 23
   Script: {instanceID: 0}
+- Class: 28
+  Script: {instanceID: 0}
 - Class: 33
   Script: {instanceID: 0}
 - Class: 43
@@ -24,7 +26,7 @@ ClassTypes:
 - Class: 48
   Script: {instanceID: 0}
 Assets:
-- Assets/Mods/Corkscrew Coaster/Corkscrew Coaster@Car.prefab
-- Assets/Mods/Corkscrew Coaster/Corkscrew Coaster@Crossbeam.prefab
-- Assets/Mods/Corkscrew Coaster/Corkscrew Coaster@FrontCar.prefab
+- Assets/Resources/AssetPack/c184c4f392587465f9bf2c86e6615e78.prefab
+- Assets/Resources/AssetPack/01be2cec49bbb476381a537d75ad047e.prefab
+- Assets/Resources/AssetPack/7c1045f838c59460db2bfebd3df04a47.prefab
 Dependencies: []

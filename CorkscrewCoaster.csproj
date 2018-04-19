@@ -21,7 +21,8 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="Parkitect, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
-      <HintPath>..\..\Parkitect_Data\Managed\Parkitect.dll</HintPath>
+      <HintPath>../../Parkitect_Data/Managed/Parkitect.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -81,9 +82,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assetbundle\mod" />
-    <Content Include="assetbundle\mod.manifest" />
-    <Content Include="preview.png" />
+    <Content Include="assetbundle\assetpack">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assetbundle\assetpack.manifest">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="preview.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="steam_workshop-id">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

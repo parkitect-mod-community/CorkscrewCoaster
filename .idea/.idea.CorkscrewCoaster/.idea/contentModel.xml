@@ -21,8 +21,8 @@
       </e>
       <e p="TwisterCoasterMeshGenerator.cs" t="Include" />
       <e p="assetbundle" t="Include">
-        <e p="mod" t="Include" />
-        <e p="mod.manifest" t="Include" />
+        <e p="assetpack" t="Include" />
+        <e p="assetpack.manifest" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="packages" t="ExcludeRecursive" />

@@ -24,6 +24,7 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
     {
         base.Initialize();
         trackWidth = 0.45234f;
+        
     }
 
     public override void prepare(TrackSegment4 trackSegment, GameObject putMeshOnGO)
@@ -93,17 +94,17 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
 
     public override float getTunnelOffsetY()
     {
-        return 0.2f;
+        return 0.4f;
     }
 
     public override float getTunnelWidth()
     {
-        return 0.7f;
+        return 0.6f;
     }
 
     public override float getTunnelHeight()
     {
-        return 1f;
+        return 1.7f;
     }
     public override float getFrictionWheelOffsetY()
     {
