@@ -97,10 +97,7 @@
     <Content Include="TrackRiderUtil\.git" />
     <Content Include="TrackRiderUtil\.gitignore" />
     <Content Include="TrackRiderUtil\LICENSE" />
-    <Content Include="TrackRiderUtil\mod.json" />
     <Content Include="TrackRiderUtil\README.md" />
-    <Content Include="TrackRiderUtil\TrackedRiderUtility.csproj" />
-    <Content Include="TrackRiderUtil\TrackedRiderUtility.sln" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

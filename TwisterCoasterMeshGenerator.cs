@@ -94,7 +94,7 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
 
     public override float getTunnelOffsetY()
     {
-        return 0.4f;
+        return 0.3f;
     }
 
     public override float getTunnelWidth()
@@ -104,7 +104,7 @@ public class TwisterCoasterMeshGenerator : MeshGenerator
 
     public override float getTunnelHeight()
     {
-        return 1.7f;
+        return 1.3f;
     }
     public override float getFrictionWheelOffsetY()
     {

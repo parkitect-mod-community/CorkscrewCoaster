@@ -15,9 +15,6 @@
         <e p="README.md" t="Include" />
         <e p="TrackRideHelper.cs" t="Include" />
         <e p="TrackRiderBinder.cs" t="Include" />
-        <e p="TrackedRiderUtility.csproj" t="Include" />
-        <e p="TrackedRiderUtility.sln" t="Include" />
-        <e p="mod.json" t="Include" />
       </e>
       <e p="TwisterCoasterMeshGenerator.cs" t="Include" />
       <e p="assetbundle" t="Include">
