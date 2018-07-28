@@ -20,15 +20,12 @@ namespace CorkscrewCoaster
         public void onEnabled()
         {
             var dsc = System.IO.Path.DirectorySeparatorChar;
-            assetBundle = AssetBundle.LoadFromFile( Path + dsc + "assetbundle" + dsc + "assetpack");
+            assetBundle = AssetBundle.LoadFromFile( Path + dsc + "assetpack");
 
             FrontCartGo =  assetBundle.LoadAsset<GameObject> ("01be2cec49bbb476381a537d75ad047e");
             CartGo =  assetBundle.LoadAsset<GameObject> ("7c1045f838c59460db2bfebd3df04a47");
             SideCrossBeamsGo =  assetBundle.LoadAsset<GameObject> ("c184c4f392587465f9bf2c86e6615e78");
             
-            
-         
-
             binder = new TrackRiderBinder("kvwQwhKWWG");
             TrackedRide trackedRide =
                 binder.RegisterTrackedRide<TrackedRide>("Steel Coaster", "CorkscrewCoaster", "Corkscrew Coaster");
@@ -54,7 +51,7 @@ namespace CorkscrewCoaster
 
             CoasterCarInstantiator coasterCarInstantiator =
                 binder.RegisterCoasterCarInstaniator<CoasterCarInstantiator>(trackedRide, "CorkscrewCoasterInsantiator",
-                    "Corkscrew Car", 1, 15, 6);
+                    "Corkscrew Car", 6, 16, 3);
 
             BaseCar frontCar = binder.RegisterCar<BaseCar>(Object.Instantiate(FrontCartGo), "CorkScrewCoaster_Front_Car",
                 .35f, 0f, true, new[]
@@ -66,6 +63,7 @@ namespace CorkscrewCoaster
             coasterCarInstantiator.frontVehicleGO = frontCar;
             coasterCarInstantiator.frontVehicleGO.gameObject.AddComponent<RestraintRotationController>().closedAngles =
                 new Vector3(110, 0, 0);
+           
 
             List<Transform> transforms = new List<Transform>();
             Utility.recursiveFindTransformsStartingWith("wheel", frontCar.transform, transforms);
