@@ -81,8 +81,6 @@ namespace CorkscrewCoaster
             }
 
             binder.Apply();
-            
-            AssetBundleManager.unload();
         }
 
         public void onDisabled()

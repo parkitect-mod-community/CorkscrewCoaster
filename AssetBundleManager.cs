@@ -21,12 +21,8 @@ public class AssetBundleManager
 		FrontCartGo =  assetBundle.LoadAsset<GameObject> ("01be2cec49bbb476381a537d75ad047e");
 		CartGo =  assetBundle.LoadAsset<GameObject> ("7c1045f838c59460db2bfebd3df04a47");
 		SideCrossBeamsGo =  assetBundle.LoadAsset<GameObject> ("c184c4f392587465f9bf2c86e6615e78");
-    }
-
-	public void unload()
-	{
 		assetBundle.Unload(false);
-	}
+    }
 
 }
 
