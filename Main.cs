@@ -8,23 +8,14 @@ namespace CorkscrewCoaster
     public class Main : IMod
     {
         private TrackRiderBinder binder;
-        private AssetBundle assetBundle;
-        
-        public GameObject FrontCartGo;
-        public GameObject CartGo;
-        public GameObject SideCrossBeamsGo;
-
-        
-        GameObject _go;
+             
+        public static AssetBundleManager AssetBundleManager;
 
         public void onEnabled()
         {
-            var dsc = System.IO.Path.DirectorySeparatorChar;
-            assetBundle = AssetBundle.LoadFromFile( Path + dsc + "assetpack");
-
-            FrontCartGo =  assetBundle.LoadAsset<GameObject> ("01be2cec49bbb476381a537d75ad047e");
-            CartGo =  assetBundle.LoadAsset<GameObject> ("7c1045f838c59460db2bfebd3df04a47");
-            SideCrossBeamsGo =  assetBundle.LoadAsset<GameObject> ("c184c4f392587465f9bf2c86e6615e78");
+            if (AssetBundleManager == null) {
+                AssetBundleManager = new AssetBundleManager (this);
+            }
             
             binder = new TrackRiderBinder("kvwQwhKWWG");
             TrackedRide trackedRide =
@@ -34,7 +25,7 @@ namespace CorkscrewCoaster
             TrackRideHelper.PassMeshGeneratorProperties(TrackRideHelper.GetTrackedRide("Steel Coaster").meshGenerator,
                 trackedRide.meshGenerator);
 
-            trackGenerator.crossBeamGO = GameObjectHelper.SetUV(Object.Instantiate(SideCrossBeamsGo), 15, 14);
+            trackGenerator.crossBeamGO = GameObjectHelper.SetUV(Object.Instantiate(AssetBundleManager.SideCrossBeamsGo), 15, 14);
 
 
             trackedRide.price = 1200;
@@ -53,7 +44,7 @@ namespace CorkscrewCoaster
                 binder.RegisterCoasterCarInstaniator<CoasterCarInstantiator>(trackedRide, "CorkscrewCoasterInsantiator",
                     "Corkscrew Car", 6, 16, 3);
 
-            BaseCar frontCar = binder.RegisterCar<BaseCar>(Object.Instantiate(FrontCartGo), "CorkScrewCoaster_Front_Car",
+            BaseCar frontCar = binder.RegisterCar<BaseCar>(Object.Instantiate(AssetBundleManager.FrontCartGo), "CorkScrewCoaster_Front_Car",
                 .35f, 0f, true, new[]
                 {
                     new Color(168f / 255, 14f / 255, 14f / 255), new Color(234f / 255, 227f / 255, 227f / 255),
@@ -72,7 +63,7 @@ namespace CorkscrewCoaster
                 transform.gameObject.AddComponent<FrictionWheelAnimator>();
             }
 
-            BaseCar backCar = binder.RegisterCar<BaseCar>(Object.Instantiate(CartGo), "CorkScrewCoaster_Back_Car", .35f,
+            BaseCar backCar = binder.RegisterCar<BaseCar>(Object.Instantiate(AssetBundleManager.CartGo), "CorkScrewCoaster_Back_Car", .35f,
                 -.3f, false, new[]
                 {
                     new Color(168f / 255, 14f / 255, 14f / 255), new Color(234f / 255, 227f / 255, 227f / 255),
@@ -90,7 +81,8 @@ namespace CorkscrewCoaster
             }
 
             binder.Apply();
-            assetBundle.Unload(false);
+            
+            AssetBundleManager.unload();
         }
 
         public void onDisabled()

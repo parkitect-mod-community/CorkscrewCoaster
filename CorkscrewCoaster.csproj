@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>CorkscrewCoaster</RootNamespace>
     <AssemblyName>CorkscrewCoaster</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -70,6 +70,7 @@
     <DefineConstants>PARKITECT</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AssetBundleManager.cs" />
     <Compile Include="TwisterCoasterMeshGenerator.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="TrackRiderUtil\BaseCar.cs" />
