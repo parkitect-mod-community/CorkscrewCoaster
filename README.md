@@ -1,5 +1,31 @@
-# Corkscrew Coaster Mod
+![Corkscrew Coaster](https://steamuserimages-a.akamaihd.net/ugc/2435761146288328488/26009AA32E923A063B2E2AD736ECC31F0A3956D6/)
 
-Adds a Corkscrew Coaster to the Parkitect Game.
 
-Made by H-Pops & Casual_Dutchman
+## Introduction
+
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
+Adds a corkscrew coaster.
+
+A corkscrew coaster is a steel coaster introduced by Cedar Point. This was the first coaster that introduced 3 inversions. 
+
+## License
+
+```
+/**
+* Copyright 2018 Michael Pollind
+*
+* Licensed under the Apache License, Version 2.0 (the "License");
+* you may not use this file except in compliance with the License.
+* You may obtain a copy of the License at
+*
+*     http://www.apache.org/licenses/LICENSE-2.0
+*
+* Unless required by applicable law or agreed to in writing, software
+* distributed under the License is distributed on an "AS IS" BASIS,
+* WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+* See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+```
