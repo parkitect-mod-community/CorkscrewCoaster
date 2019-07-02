@@ -38,6 +38,5 @@ namespace CorkscrewCoaster
             assetBundle.Unload(false);
         }
 
-        private Main Main { get; set; }
     }
 }

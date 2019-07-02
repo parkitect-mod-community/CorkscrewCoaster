@@ -24,17 +24,25 @@ namespace CorkscrewCoaster
     public class Main : IMod
     {
         private TrackRiderBinder binder;
-
+        private GameObject hider;
 
         public string Path
         {
             get { return ModManager.Instance.getModEntries().First(x => x.mod == this).path; }
         }
 
+        private GameObject ProxyObject(GameObject gameObject)
+        {
+            gameObject.transform.SetParent(hider.transform);
+            return gameObject;
+        }
+        
         public void onEnabled()
         {
+            hider = new GameObject();
+            hider.SetActive(false);
+            
             AssetBundleManager assetBundleManager = new AssetBundleManager(this);
-
             binder = new TrackRiderBinder("kvwQwhKWWG");
             var trackedRide =
                 binder.RegisterTrackedRide<TrackedRide>("Steel Coaster", "CorkscrewCoaster", "Corkscrew Coaster");
@@ -44,7 +52,7 @@ namespace CorkscrewCoaster
                 trackedRide.meshGenerator);
 
             trackGenerator.crossBeamGO =
-                GameObjectHelper.SetUV(Object.Instantiate(assetBundleManager.SideCrossBeamsGo), 15, 14);
+                GameObjectHelper.SetUV(ProxyObject(Object.Instantiate(assetBundleManager.SideCrossBeamsGo)), 15, 14);
 
 
             trackedRide.price = 1200;
@@ -63,7 +71,7 @@ namespace CorkscrewCoaster
                 binder.RegisterCoasterCarInstaniator<CoasterCarInstantiator>(trackedRide, "CorkscrewCoasterInsantiator",
                     "Corkscrew Car", 6, 16, 3);
 
-            var frontCar = binder.RegisterCar<BaseCar>(Object.Instantiate(assetBundleManager.FrontCartGo),
+            var frontCar = binder.RegisterCar<BaseCar>(ProxyObject(Object.Instantiate(assetBundleManager.FrontCartGo)),
                 "CorkScrewCoaster_Front_Car",
                 .35f, 0f, true, new[]
                 {
@@ -80,7 +88,7 @@ namespace CorkscrewCoaster
             Utility.recursiveFindTransformsStartingWith("wheel", frontCar.transform, transforms);
             foreach (var transform in transforms) transform.gameObject.AddComponent<FrictionWheelAnimator>();
 
-            var backCar = binder.RegisterCar<BaseCar>(Object.Instantiate(assetBundleManager.CartGo),
+            var backCar = binder.RegisterCar<BaseCar>(ProxyObject(Object.Instantiate(assetBundleManager.CartGo)),
                 "CorkScrewCoaster_Back_Car", .35f,
                 -.3f, false, new[]
                 {
@@ -94,6 +102,7 @@ namespace CorkscrewCoaster
 
             Utility.recursiveFindTransformsStartingWith("wheel", backCar.transform, transforms);
             foreach (var transform in transforms) transform.gameObject.AddComponent<FrictionWheelAnimator>();
+           
 
             binder.Apply();
         }
