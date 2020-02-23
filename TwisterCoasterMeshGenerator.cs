@@ -112,8 +112,9 @@ namespace CorkscrewCoaster
         {
             return 0.3f;
         }
+        
 
-        public override float getTunnelWidth()
+        public override float getTunnelWidth(TrackSegment4 trackSegment, float t)
         {
             return 0.6f;
         }
