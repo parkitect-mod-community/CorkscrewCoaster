@@ -73,14 +73,10 @@ namespace CorkscrewCoaster
             leftTubeExtruder.extrude(middlePoint, tangentPoint, normal);
             rightTubeExtruder.extrude(middlePoint2, tangentPoint, normal);
             collisionMeshExtruder.extrude(trackPivot, tangentPoint, normal);
-            if (liftExtruder != null)
+            foreach (Extruder liftExtruder in this.liftExtruders)
                 liftExtruder.extrude(vector - normal * (0.06713f + chainLiftHeight / 2f), tangentPoint, normal);
         }
 
-        public override void afterExtrusion(TrackSegment4 trackSegment, GameObject putMeshOnGO)
-        {
-            base.afterExtrusion(trackSegment, putMeshOnGO);
-        }
 
         public override Mesh getMesh(GameObject putMeshOnGo)
         {
@@ -112,7 +108,7 @@ namespace CorkscrewCoaster
         {
             return 0.3f;
         }
-        
+
 
         public override float getTunnelWidth(TrackSegment4 trackSegment, float t)
         {
