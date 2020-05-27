@@ -1,0 +1,22 @@
+{
+  "name": "CorkscrewCoaster",
+  "folder": "pollend@CorkscrewCoaster",
+  "version": "v1.0.0",
+  "workshop": "1363563059",
+  "author": "Michael Pollind",
+  "description": null,
+  "preview": "./preview.png",
+  "assemblies": [
+    "System",
+    "System.Core",
+    "System.Data",
+    "UnityEngine",
+    "UnityEngine.AssetBundleModule",
+    "UnityEngine.CoreModule",
+    "Parkitect",
+    "UnityEngine.PhysicsModule"
+  ],
+  "assets": [
+    "assetbundle/**"
+  ]
+}
