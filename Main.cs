@@ -21,7 +21,7 @@ using UnityEngine;
 
 namespace CorkscrewCoaster
 {
-    public class Main : IMod
+    public class Main : AbstractMod
     {
         private TrackRiderBinder binder;
         private GameObject hider;
@@ -36,12 +36,32 @@ namespace CorkscrewCoaster
             gameObject.transform.SetParent(hider.transform);
             return gameObject;
         }
-        
-        public void onEnabled()
+
+        public override string getName()
+        {
+            return "Corkscrew Coaster";
+        }
+
+        public override string getDescription()
+        {
+            return "Creates a Corkscrew Coaster";
+        }
+
+        public override string getVersionNumber()
+        {
+            return "v1.0.0";
+        }
+
+        public override string getIdentifier()
+        {
+            return "CorkscrewCoaster";
+        }
+
+        public override void onEnabled()
         {
             hider = new GameObject();
             hider.SetActive(false);
-            
+
             AssetBundleManager assetBundleManager = new AssetBundleManager(this);
             binder = new TrackRiderBinder("kvwQwhKWWG");
             var trackedRide =
@@ -102,20 +122,14 @@ namespace CorkscrewCoaster
 
             Utility.recursiveFindTransformsStartingWith("wheel", backCar.transform, transforms);
             foreach (var transform in transforms) transform.gameObject.AddComponent<FrictionWheelAnimator>();
-           
+
 
             binder.Apply();
         }
 
-        public void onDisabled()
+        public override void onDisabled()
         {
             binder.Unload();
         }
-
-        public string Name => "Corkscrew Coaster";
-
-        public string Description => "Creates a Corkscrew Coaster";
-
-        string IMod.Identifier => "CorkscrewCoaster";
     }
 }
